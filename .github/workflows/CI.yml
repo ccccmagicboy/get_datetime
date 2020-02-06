@@ -14,7 +14,13 @@ env:
 
 jobs:
   build:
-    runs-on: windows-2016
+    strategy:
+      matrix:
+        os:
+        - windows-2016
+        - ubuntu-16.04
+  
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout this repos
@@ -35,7 +41,7 @@ jobs:
     - name: Print the datetime
       run: |
         echo ${{ steps.get_datetime.outputs.datetime_str }}
-      shell: bash       
+      shell: bash
         
         
         
