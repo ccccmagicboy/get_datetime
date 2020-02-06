@@ -10,7 +10,7 @@
 
 python -m pip install --upgrade pip
 pip install -U pytz
-echo %(pwd)
+echo "%(pwd)"
 python %(pwd)/action.py
 
 #echo bye bye!
