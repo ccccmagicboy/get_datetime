@@ -30,7 +30,7 @@ jobs:
       uses: ccccmagicboy/get_datetime@master
       with:
         tz1: 'Asia'
-        tz2: 'Beijing'
+        tz2: 'Shanghai'
 
         
         
