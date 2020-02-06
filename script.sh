@@ -5,7 +5,7 @@
 #echo hello the world!
 #echo $INPUT_TEST
 
-python /home/runner/work/_actions/ccccmagicboy/FW_esp32_get_IDF_hash_action/master/action.py
+echo "::set-output name=datetime::$(date +'%Y%m%d_%H%M%S')"
 
 #echo bye bye!
 #echo "::set-output name=test_out::aaaabbbbcccc"
