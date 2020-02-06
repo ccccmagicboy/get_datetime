@@ -8,8 +8,10 @@
 # sudo timedatectl set-timezone $INPUT_TZ1/$INPUT_TZ2
 # echo "::set-output name=datetime::$(date +'%Y%m%d_%H%M%S')"
 
+python -m pip install --upgrade pip
 pip install -U pytz
-python /home/runner/work/_actions/ccccmagicboy/get_datetime/master/action.py
+echo %(pwd)
+python %(pwd)/action.py
 
 #echo bye bye!
 #echo "::set-output name=test_out::aaaabbbbcccc"
