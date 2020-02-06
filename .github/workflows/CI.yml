@@ -25,12 +25,17 @@ jobs:
         sh script.sh
       shell: bash
     
-    - name:  the datetime
+    - name: Get the datetime
       id: get_datetime
       uses: ccccmagicboy/get_datetime@master
       with:
         tz1: 'Asia'
         tz2: 'Shanghai'
 
+    - name: Print the datetime
+      run: |
+        echo ${{ steps.get_datetime.outputs.datetime_str }}
+      shell: bash       
+        
         
         
