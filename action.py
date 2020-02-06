@@ -6,7 +6,7 @@ from pytz import timezone
 # echo "::set-output name=datetime::$(date +'%Y%m%d_%H%M%S')"
 print('time zone is {0:s}/{1:s}'.format(os.environ['INPUT_TZ1'], os.environ['INPUT_TZ2']))
 
-fmt = "%Y%m%d_%H%M%S%Z"
+fmt = "%Y%m%d_%H%M%S_%Z"
 now_utc = datetime.now(timezone('{0:s}/{1:s}'.format(os.environ['INPUT_TZ1'], os.environ['INPUT_TZ2'])))
 str_temp = now_utc.strftime(fmt)
 
