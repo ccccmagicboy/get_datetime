@@ -1,10 +1,14 @@
 name: 'Get the datetime string'
 description: 'use it to get the datetime.'
 inputs:
-  test:
-    description: 'input test'
+  tz1:
+    description: 'time zone of the datetime'
     required: true
-    default: 'xxx'
+    default: 'Asia'
+  tz2:
+    description: 'time zone of the datetime'
+    required: true
+    default: 'Shanghai'
 outputs:
   datetime: #
     description: 'date and time'
