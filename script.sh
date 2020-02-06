@@ -5,6 +5,7 @@
 #echo hello the world!
 #echo $INPUT_TEST
 echo TZ="$INPUT_TZ1/$INPUT_TZ2"
+sudo timedatectl set-timezone $INPUT_TZ1/$INPUT_TZ2
 echo "::set-output name=datetime::$(date +'%Y%m%d_%H%M%S')"
 
 #echo bye bye!
