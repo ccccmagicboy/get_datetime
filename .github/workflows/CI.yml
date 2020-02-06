@@ -10,7 +10,7 @@ on: [push]
 
 env:
   INPUT_TZ1: Asia
-  INPUT_TZ2: Beijing
+  INPUT_TZ2: Shanghai
 
 jobs:
   build:
