@@ -10,7 +10,7 @@ inputs:
     required: true
     default: 'Shanghai'
 outputs:
-  datetime: #
+  datetime_str: #
     description: 'date and time'
 runs:
   using: 'node12'
