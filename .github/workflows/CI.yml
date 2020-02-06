@@ -1,0 +1,41 @@
+#===================================================================================
+# Lisence: MIT
+# Author: ccccmagicboy
+# Url: https://ccrobot-online.com.cn
+#===================================================================================
+
+name: CI
+
+on: [push]
+
+env:
+  INPUT_TZ1: Asia
+  INPUT_TZ2: Beijing
+
+jobs:
+  build:
+    runs-on: windows-2016
+
+    steps:
+    - name: Checkout this repos
+      uses: actions/checkout@v2
+
+    - name: Check python version
+      run: |
+        python -c "import sys; print(sys.version)"
+      shell: bash 
+      
+    - name: Check action.py itself
+      run: |
+        import action
+      shell: python    
+    
+    - name:  the datetime
+      id: get_datetime
+      uses: ccccmagicboy/get_datetime@master
+      with:
+        tz1: 'Asia'
+        tz2: 'Beijing'
+
+        
+        
