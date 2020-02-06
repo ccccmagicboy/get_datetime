@@ -10,8 +10,8 @@
 
 python -m pip install --upgrade pip
 pip install -U pytz
-echo "%(pwd)"
-python %(pwd)/action.py
+echo $(pwd)
+python $(pwd)/action.py
 
 #echo bye bye!
 #echo "::set-output name=test_out::aaaabbbbcccc"
