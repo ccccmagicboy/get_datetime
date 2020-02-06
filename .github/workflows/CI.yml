@@ -19,15 +19,10 @@ jobs:
     steps:
     - name: Checkout this repos
       uses: actions/checkout@v2
-
-    - name: Check python version
-      run: |
-        python -c "import sys; print(sys.version)"
-      shell: bash 
       
     - name: Check action.py itself
       run: |
-        python action.py
+        sh script.sh
       shell: bash
     
     - name:  the datetime
