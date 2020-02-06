@@ -27,8 +27,8 @@ jobs:
       
     - name: Check action.py itself
       run: |
-        import action
-      shell: python    
+        python action.py
+      shell: bash
     
     - name:  the datetime
       id: get_datetime
