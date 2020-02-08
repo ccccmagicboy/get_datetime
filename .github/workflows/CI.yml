@@ -24,14 +24,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout this repos
-      uses: actions/checkout@v2
-      
-    - name: Check action.py itself
-      run: |
-        sh script.sh
-      shell: bash
-    
     - name: Get the datetime
       id: get_datetime
       uses: ccccmagicboy/get_datetime@master

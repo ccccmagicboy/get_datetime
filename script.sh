@@ -10,7 +10,7 @@
 
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform    
-    echo "linux"
+    echo "Darwin"
     brew install coreutils
     alias readlink=greadlink
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
