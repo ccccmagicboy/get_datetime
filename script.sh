@@ -8,16 +8,17 @@
 # sudo timedatectl set-timezone $INPUT_TZ1/$INPUT_TZ2
 # echo "::set-output name=datetime::$(date +'%Y%m%d_%H%M%S')"
 
-[[ `uname` == 'Darwin' ]] && {
-	which greadlink gsed gzcat > /dev/null && {
-        brew install coreutils gnu-sed
-		unalias readlink sed zcat
-		alias readlink=greadlink sed=gsed zcat=gzcat
-	} || {
-		echo 'ERROR: GNU utils required for Mac. You may use homebrew to install them: brew install coreutils gnu-sed'
-		exit 1
-	}
-}
+if [ "$(uname)" == "Darwin" ]; then
+    # Do something under Mac OS X platform     
+    brew install coreutils
+    alias readlink=greadlink
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # Do something under GNU/Linux platform
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+    # Do something under 32 bits Windows NT platform
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+    # Do something under 64 bits Windows NT platform
+fi
 
 # Absolute path to this script, e.g. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f "$0")
