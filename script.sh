@@ -13,6 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "Darwin"
     brew install coreutils
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    unalias readlink
     alias readlink=greadlink
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "linux"
