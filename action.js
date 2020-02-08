@@ -7,7 +7,7 @@ function run() {
     console.log(script);
     
     const exec = require('child_process').exec;
-    const testscript = exec('sh ' + script);
+    const testscript = exec('bash ' + script);
 
     testscript.stdout.on('data', function(data){
         console.log(data);
